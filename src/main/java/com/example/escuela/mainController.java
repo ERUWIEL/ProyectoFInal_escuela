@@ -15,4 +15,8 @@ public class mainController {
     public String recuperarAcceso() {
         return "recover";
     }
+    @GetMapping({"/inicio", "/inicio.html"})
+public String inicio() {
+    return "inicio";
+}
 }

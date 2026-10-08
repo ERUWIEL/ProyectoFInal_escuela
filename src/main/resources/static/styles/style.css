@@ -1,14 +1,11 @@
 @import url("globals.css");
 
+/* ---------- Base ---------- */
+
 *{
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
-    font-size: 16px;
     color: var(--text-color);
-}
-
-html{
-    background-color: var(--bg-color);
 }
 
 body{
@@ -16,23 +13,71 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: var(--bg-color);
+}
+
+h1,
+h2,
+h3{
+    margin: 0 0 1rem;
 }
 
 h1{
     display: none;
+    margin-bottom: 2rem;
     font-size: 1.8rem;
     font-weight: 300;
-    margin: 0 0 3rem;
 }
 
 h2{
     font-size: 1.5rem;
     font-weight: 400;
     text-align: center;
-    margin: 0 0 1rem;
 }
 
-/* movil */
+h3{
+    font-size: 1rem;
+}
+
+p{
+    margin: 0;
+}
+
+ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+strong,
+small{
+    display: block;
+}
+
+small{
+    font-size: 0.7rem;
+}
+
+img{
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+input{
+    font-size: 1rem;
+}
+
+/* ocultas */
+nav a div,
+nav > div,
+nav .period,
+aside p,
+.desktop{
+    display: none;
+}
+
+/* barra arriba */
 
 nav{
     display: grid;
@@ -44,37 +89,19 @@ nav{
     border-bottom: 1px solid var(--border-color);
 }
 
-nav a{
+nav a,
+aside a{
     display: flex;
     align-items: center;
     gap: 0.75rem;
 }
 
-nav .logo{
-    display: grid;
-    place-items: center;
-    flex-shrink: 0;
-    width: 2.6rem;
-    height: 2.6rem;
-    background-color: var(--primary);
-    border-radius: 0.6rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: #fff;
-}
-
-nav a div{
-    display: none;
-}
-
 nav strong{
-    display: block;
     font-size: 1.1rem;
     font-weight: 400;
 }
 
 nav small{
-    display: block;
     font-size: 0.65rem;
     letter-spacing: 0.4px;
     text-transform: uppercase;
@@ -82,13 +109,30 @@ nav small{
 }
 
 nav p{
-    margin: 0;
-    text-align: center;
     font-size: 0.95rem;
+    text-align: center;
 }
 
-nav .period{
-    display: none;
+nav > div{
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.logo{
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 0.6rem;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.period{
     padding: 0.5rem 1rem;
     border-radius: 999px;
     background-color: var(--primary-soft);
@@ -96,7 +140,15 @@ nav .period{
     font-size: 0.85rem;
 }
 
-/* movil */
+.avatar{
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: var(--avatar-bg);
+}
+
+/* tarjetas */
 
 main{
     flex: 1;
@@ -117,7 +169,40 @@ main section{
     box-shadow: var(--shadow-card);
 }
 
-/* forms */
+section > p{
+    margin-bottom: 1.25rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* completo*/
+main[class]{
+    justify-content: flex-start;
+}
+
+main[class] section{
+    width: 100%;
+    margin: 0;
+    border: 1px solid var(--border-color);
+    box-shadow: none;
+}
+
+main[class] h2{
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.badge{
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    background-color: var(--primary-soft);
+}
+
+/* ---------- Formulario ---------- */
 
 form{
     display: flex;
@@ -141,7 +226,6 @@ form input:not([type="submit"]){
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-buttons);
     background-color: var(--input-bg);
-    color: var(--text-color);
 }
 
 form input:not([type="submit"]):focus{
@@ -150,12 +234,43 @@ form input:not([type="submit"]):focus{
     outline-offset: 1px;
 }
 
+form a{
+    align-self: center;
+    padding: 0.3rem;
+    font-size: 0.85rem;
+}
+
+form a:hover{
+    text-decoration: underline;
+}
+
+input[type="submit"]{
+    align-self: center;
+    min-width: 10rem;
+    height: 2.9rem;
+    padding: 0 1.5rem;
+    border: none;
+    border-radius: var(--border-radius-buttons);
+    background-color: var(--primary);
+    color: #fff;
+    transition: all 0.5s;
+}
+
+input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: var(--primary-hover);
+}
+
+main[class] input[type="submit"]{
+    align-self: flex-start;
+}
+
 /* password */
 .password{
     position: relative;
 }
 
-.password input{
+form .password input{
     padding-right: 3rem;
 }
 
@@ -172,120 +287,23 @@ form input:not([type="submit"]):focus{
     cursor: pointer;
 }
 
-.password img{
-    width: 1.3rem;
-    height: 1.3rem;
-}
-
-form a{
-    align-self: center;
-    padding: 0.3rem;
-    font-size: 0.85rem;
-}
-
-form a:hover{
-    text-decoration: underline;
-}
-
-input[type="submit"]{
-    align-self: center;
-    width: auto;
-    min-width: 10rem;
-    height: 2.9rem;
-    padding: 0 1.5rem;
-    border-style: none;
-    border-radius: var(--border-radius-buttons);
-    background-color: var(--primary);
-    color: #fff;
-    transition: all 0.5s;
-}
-
-input[type="submit"]:hover{
-    cursor: pointer;
-    transition: all 0.5s;
-    background-color: var(--primary-hover);
-}
-
-input[type="submit"]:disabled{
-    background-color: #a7a7a7;
-    color: #4e4a4a;
-    border-style: inset;
-}
-
-input[type="submit"]:disabled:hover{
-    cursor: not-allowed;
-}
-
-/* Recover */
-
-.recovery{
-    justify-content: flex-start;
-    padding: 1rem 0 2rem;
-}
-
-.recovery h1{
-    margin-bottom: 1.5rem;
-}
-
-.recovery section{
-    width: 100%;
-    margin: 0;
-    border: 1px solid var(--border-color);
-    box-shadow: none;
-}
-
-.recovery h2{
-    margin-bottom: 0.5rem;
-    text-align: left;
-}
-
-.recovery input[type="submit"]{
-    align-self: flex-start;
-}
-
-.badge{
-    display: grid;
-    place-items: center;
-    width: 3rem;
-    height: 3rem;
-    margin-bottom: 1rem;
-    border-radius: 50%;
-    background-color: var(--primary-soft);
-}
-
-.badge img{
-    width: 1.4rem;
-    height: 1.4rem;
-}
-
-section > p{
-    margin: 0 0 1.25rem;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
+/* warnings */
 
 output{
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
     padding: 0.9rem 1rem;
-    background-color: var(--success-bg);
     border-radius: var(--border-radius-buttons);
+    background-color: var(--success-bg);
+    font-size: 0.85rem;
 }
 
 output img{
     flex-shrink: 0;
-    width: 1.3rem;
-    height: 1.3rem;
-}
-
-output p{
-    margin: 0;
-    font-size: 0.85rem;
 }
 
 output strong{
-    display: block;
     color: var(--success-text);
 }
 
@@ -293,7 +311,101 @@ output span{
     display: block;
 }
 
-/* desktop*/
+.warning{
+    background-color: var(--warning-bg);
+}
+
+.warning strong{
+    color: var(--warning-text);
+}
+
+/*secciones   */
+
+.stats{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+.stats section{
+    padding: 1rem;
+}
+
+.stats p{
+    margin-bottom: 0.4rem;
+    font-size: 0.8rem;
+}
+
+.stats strong{
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--primary);
+}
+
+.stats section:nth-child(3) strong{
+    color: var(--warning-text);
+}
+
+.stats small{
+    margin-top: 0.9rem;
+    color: var(--text-muted);
+}
+
+main ul{
+    flex-direction: column;
+    gap: 0.8rem;
+    font-size: 0.85rem;
+}
+
+/* movil - menu */
+
+.layout{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.layout main{
+    padding-bottom: 6rem;
+}
+
+aside{
+    position: fixed;
+    inset: auto 0 0 0;
+    padding: 0.5rem 0.5rem calc(0.5rem + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    font-size: 0.7rem;
+}
+
+aside *{
+    color: var(--text-muted);
+}
+
+aside ul{
+    justify-content: space-around;
+}
+
+aside a{
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.25rem 0.5rem;
+}
+
+aside img{
+    opacity: 0.5;
+}
+
+aside [aria-current] img{
+    opacity: 1;
+}
+
+aside [aria-current] span{
+    color: var(--primary);
+}
+
+/* desktop */
 
 @media (min-width: 800px) {
     nav{
@@ -302,21 +414,20 @@ output span{
         padding: 0.9rem 1.75rem;
     }
 
-    nav a div{
-        display: block;
+    nav > div{
+        display: flex;
     }
 
-    nav .period{
-        display: block;
+    nav a div,
+    nav .period,
+    aside p,
+    .desktop{
+        display: revert;
     }
 
-    nav p{
+    nav p,
+    .mobile{
         display: none;
-    }
-
-    main{
-        justify-content: flex-start;
-        padding: 2rem 0 3rem;
     }
 
     h1{
@@ -324,8 +435,12 @@ output span{
     }
 
     h2{
-        font-size: 1.6rem;
         text-align: left;
+    }
+
+    main{
+        justify-content: flex-start;
+        padding: 2rem 0 3rem;
     }
 
     main section{
@@ -338,11 +453,70 @@ output span{
         align-self: flex-start;
     }
 
-    .recovery{
-        padding: 2rem 0 3rem;
+    .stats{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
     }
 
-    .recovery h2{
-        font-size: 1.5rem;
+    .layout{
+        flex-direction: row;
+    }
+
+    .layout main{
+        padding: 1.5rem 2rem;
+    }
+
+    aside{
+        position: static;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 15rem;
+        padding: 1rem 0.75rem;
+        border-top: none;
+        background-color: var(--sidebar-bg);
+        font-size: 0.9rem;
+    }
+
+    aside *{
+        color: var(--sidebar-text);
+    }
+
+    aside p{
+        margin: 0.25rem 0.5rem 0;
+        font-size: 0.65rem;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+        opacity: 0.7;
+    }
+
+    aside ul{
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    aside a{
+        flex-direction: row;
+        gap: 0.75rem;
+        padding: 0.7rem 0.8rem;
+        border-radius: var(--border-radius-buttons);
+    }
+
+    aside a:hover{
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    aside [aria-current]{
+        background-color: rgba(255, 255, 255, 0.14);
+    }
+
+    aside [aria-current] span{
+        color: #fff;
+    }
+
+    aside img{
+        opacity: 0.85;
+        filter: brightness(0) invert(1);
     }
 }
