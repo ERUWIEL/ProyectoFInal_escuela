@@ -1,6 +1,114 @@
 @import url("globals.css");
 
-/* ---------- Base ---------- */
+
+/* base */
+
+/* base:
+   Estilos generales de texto, listas, imagenes y enlaces */
+
+
+/* visibilidad:
+   .desktop se muestra en computadora
+   .mobile se muestra en celular */
+
+
+/* barra superior:
+   nav es la barra de arriba
+   .logo es el logo de ITSON
+   .period muestra el periodo escolar
+   .avatar es la imagen del usuario */
+
+
+/* estructura:
+   .layout une el contenido y el menu
+   main contiene cada pagina
+   section se usa como tarjeta o bloque de contenido */
+
+
+/* menu:
+   aside es el menu de navegacion
+   En celular esta abajo
+   En computadora esta a la izquierda
+   [aria-current] marca la pagina actual */
+
+
+/* formularios:
+   form organiza campos y botones
+   .password coloca el boton dentro del campo de contrasena
+   input[type="submit"] es el boton principal */
+
+
+/* componentes:
+   .badge muestra un icono en un circulo
+   output muestra mensajes
+   .warning muestra una alerta
+   .stats muestra estadisticas
+   .summary muestra un resumen
+   .done indica que algo fue confirmado
+   .pagination muestra el selector de pagina */
+
+
+/* tabla:
+   .table contiene tablas
+   table, th y td son la tabla, encabezados y celdas */
+
+
+/* catalogo y tarjetas:
+   .filters contiene buscador y filtros
+   .search es el buscador
+   .cards muestra tarjetas
+   .code muestra la clave de una materia
+   .credits muestra los creditos
+   .info muestra horario y estado
+   .seats muestra cupo o estado
+   .low muestra cupo bajo */
+
+
+/* detalle de materia:
+   .course muestra los datos de una materia
+   .checks muestra validaciones
+   .ok indica que algo es valido
+   .alert indica una advertencia */
+
+
+/* confirmacion:
+   .confirm se usa despues de inscribirse
+   Muestra el mensaje, folio y resumen */
+
+
+/* horario:
+   .timetable contiene el horario
+   .schedule es la tabla del horario en computadora
+   .lesson es una materia en el horario
+   .clash es una materia con conflicto */
+
+
+/* horario movil:
+   .week crea la cuadricula del horario
+   .lesson marca una materia
+   .clash marca un conflicto
+   .label muestra dias y horas */
+
+
+/* historial y periodo:
+   .history contiene el historial
+   .term muestra un periodo
+   .pair mantiene dos estadisticas
+   .avg muestra el promedio */
+
+
+/* avisos:
+   .notices contiene los avisos
+   .notice-list es la lista de avisos
+   .notice-tag muestra el tipo de aviso
+   .important marca un aviso importante
+   .notice-detail muestra el detalle del aviso */
+
+
+/* escritorio:
+   Reglas para pantallas desde 800px
+   El menu cambia de abajo a lado
+   .desktop se muestra y .mobile se oculta */
 
 *{
     box-sizing: border-box;
@@ -8,13 +116,15 @@
     color: var(--text-color);
 }
 
+
 body{
-    margin: 0;
     min-height: 100vh;
+    margin: 0;
     display: flex;
     flex-direction: column;
     background-color: var(--bg-color);
 }
+
 
 h1,
 h2,
@@ -22,12 +132,13 @@ h3{
     margin: 0 0 1rem;
 }
 
+
 h1{
     display: none;
-    margin-bottom: 2rem;
     font-size: 1.8rem;
     font-weight: 300;
 }
+
 
 h2{
     font-size: 1.5rem;
@@ -35,13 +146,16 @@ h2{
     text-align: center;
 }
 
+
 h3{
     font-size: 1rem;
 }
 
+
 p{
     margin: 0;
 }
+
 
 ul{
     display: flex;
@@ -50,25 +164,46 @@ ul{
     list-style: none;
 }
 
+
 strong,
 small{
     display: block;
 }
 
+
 small{
     font-size: 0.7rem;
 }
+
 
 img{
     width: 1.3rem;
     height: 1.3rem;
 }
 
-input{
+
+input,
+select{
     font-size: 1rem;
 }
 
-/* ocultas */
+
+a{
+    color: var(--links-color);
+    text-decoration: none;
+    transition: all 40ms;
+}
+
+
+a:hover{
+    color: var(--links-color-hover);
+    cursor: pointer;
+}
+
+
+/* visibilidad */
+
+
 nav a div,
 nav > div,
 nav .period,
@@ -77,7 +212,24 @@ aside p,
     display: none;
 }
 
-/* barra arriba */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* nav */
+
 
 nav{
     display: grid;
@@ -85,9 +237,10 @@ nav{
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1rem;
-    background-color: var(--card-bg);
     border-bottom: 1px solid var(--border-color);
+    background-color: var(--card-bg);
 }
+
 
 nav a,
 aside a{
@@ -96,10 +249,12 @@ aside a{
     gap: 0.75rem;
 }
 
+
 nav strong{
     font-size: 1.1rem;
     font-weight: 400;
 }
+
 
 nav small{
     font-size: 0.65rem;
@@ -108,16 +263,19 @@ nav small{
     color: var(--primary-text);
 }
 
+
 nav p{
     font-size: 0.95rem;
     text-align: center;
 }
+
 
 nav > div{
     align-items: center;
     gap: 1rem;
     font-size: 0.9rem;
 }
+
 
 .logo{
     display: grid;
@@ -132,13 +290,24 @@ nav > div{
     font-weight: 500;
 }
 
-.period{
-    padding: 0.5rem 1rem;
+
+.period,
+.credits,
+.seats,
+.notice-tag{
+    padding: 0.25rem 0.7rem;
     border-radius: 999px;
     background-color: var(--primary-soft);
     color: var(--primary-text);
+    font-size: 0.75rem;
+}
+
+
+.period{
+    padding: 0.5rem 1rem;
     font-size: 0.85rem;
 }
+
 
 .avatar{
     width: 2.3rem;
@@ -148,7 +317,32 @@ nav > div{
     background-color: var(--avatar-bg);
 }
 
-/* tarjetas */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* estructura */
+
+
+.layout{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 
 main{
     flex: 1;
@@ -157,28 +351,30 @@ main{
     justify-content: center;
     width: clamp(280px, 90%, 1500px);
     margin: 0 auto;
-    padding: 1.5rem 0;
+    padding: 1.5rem 0 6rem;
 }
+
+
+main[class]{
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+
+main[class] h1{
+    margin-bottom: 0.5rem;
+}
+
 
 main section{
     width: clamp(280px, 100%, 440px);
     margin: 0 auto;
     padding: 1.5rem;
-    background-color: var(--card-bg);
     border-radius: var(--border-radius-cards);
+    background-color: var(--card-bg);
     box-shadow: var(--shadow-card);
 }
 
-section > p{
-    margin-bottom: 1.25rem;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-
-/* completo*/
-main[class]{
-    justify-content: flex-start;
-}
 
 main[class] section{
     width: 100%;
@@ -187,22 +383,86 @@ main[class] section{
     box-shadow: none;
 }
 
+
 main[class] h2{
     margin-bottom: 0.5rem;
     text-align: left;
 }
 
-.badge{
-    display: grid;
-    place-items: center;
-    width: 3rem;
-    height: 3rem;
-    margin-bottom: 1rem;
-    border-radius: 50%;
-    background-color: var(--primary-soft);
+
+section > p{
+    margin-bottom: 1.25rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
-/* ---------- Formulario ---------- */
+
+/* menú */
+
+
+
+
+
+
+
+
+
+aside{
+    position: fixed;
+    inset: auto 0 0 0;
+    padding: 0.5rem 0.5rem calc(0.5rem + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    font-size: 0.7rem;
+}
+
+
+aside *{
+    color: var(--text-muted);
+}
+
+
+aside ul{
+    justify-content: space-around;
+}
+
+
+aside a{
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.25rem 0.5rem;
+}
+
+
+aside img{
+    opacity: 0.5;
+}
+
+
+aside [aria-current] img{
+    opacity: 1;
+}
+
+
+aside [aria-current] span{
+    color: var(--primary);
+}
+
+
+/* forms */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 form{
     display: flex;
@@ -210,17 +470,21 @@ form{
     gap: 1rem;
 }
 
+
 form div{
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
 }
 
+
 label{
     font-size: 0.9rem;
 }
 
-form input:not([type="submit"]){
+
+form input:not([type="submit"]),
+form select{
     height: 2.9rem;
     padding: 0 1rem;
     border: 1px solid var(--border-color);
@@ -228,11 +492,14 @@ form input:not([type="submit"]){
     background-color: var(--input-bg);
 }
 
-form input:not([type="submit"]):focus{
+
+form input:not([type="submit"]):focus,
+form select:focus{
     border-color: var(--primary);
     outline: 2px solid var(--primary);
     outline-offset: 1px;
 }
+
 
 form a{
     align-self: center;
@@ -240,9 +507,12 @@ form a{
     font-size: 0.85rem;
 }
 
-form a:hover{
+
+form a:hover,
+td a:hover{
     text-decoration: underline;
 }
+
 
 input[type="submit"]{
     align-self: center;
@@ -256,23 +526,27 @@ input[type="submit"]{
     transition: all 0.5s;
 }
 
+
 input[type="submit"]:hover{
     cursor: pointer;
     background-color: var(--primary-hover);
 }
 
+
 main[class] input[type="submit"]{
     align-self: flex-start;
 }
 
-/* password */
+
 .password{
     position: relative;
 }
 
+
 form .password input{
     padding-right: 3rem;
 }
+
 
 .password button{
     position: absolute;
@@ -287,11 +561,39 @@ form .password input{
     cursor: pointer;
 }
 
-/* warnings */
+
+/* comp */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.badge{
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    background-color: var(--primary-soft);
+}
+
 
 output{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.75rem;
     padding: 0.9rem 1rem;
     border-radius: var(--border-radius-buttons);
@@ -299,58 +601,77 @@ output{
     font-size: 0.85rem;
 }
 
+
 output img{
     flex-shrink: 0;
 }
+
 
 output strong{
     color: var(--success-text);
 }
 
+
 output span{
     display: block;
 }
+
 
 .warning{
     background-color: var(--warning-bg);
 }
 
+
 .warning strong{
     color: var(--warning-text);
 }
 
-/*secciones   */
 
 .stats{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
     margin: 1rem 0;
 }
+
 
 .stats section{
     padding: 1rem;
 }
 
-.stats p{
+
+.stats p,
+.summary p{
     margin-bottom: 0.4rem;
     font-size: 0.8rem;
 }
 
-.stats strong{
+
+.stats strong,
+.summary strong{
     font-size: 2rem;
     font-weight: 300;
     color: var(--primary);
 }
 
-.stats section:nth-child(3) strong{
+
+.stats section:nth-child(3) strong,
+.summary:not(.done):not(.avg) strong{
     color: var(--warning-text);
 }
 
-.stats small{
-    margin-top: 0.9rem;
+
+.stats small,
+.summary small{
+    margin-top: 0.4rem;
     color: var(--text-muted);
 }
+
+
+.summary.done strong{
+    color: var(--success-text);
+}
+
 
 main ul{
     flex-direction: column;
@@ -358,54 +679,566 @@ main ul{
     font-size: 0.85rem;
 }
 
-/* movil - menu */
 
-.layout{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+.pagination{
+    margin: 2rem auto 0;
 }
 
-.layout main{
-    padding-bottom: 6rem;
+
+main.cart .pagination,
+main.enrolled .pagination{
+    margin-top: auto;
 }
 
-aside{
-    position: fixed;
-    inset: auto 0 0 0;
-    padding: 0.5rem 0.5rem calc(0.5rem + env(safe-area-inset-bottom, 0px));
-    border-top: 1px solid var(--border-color);
+
+.pagination select{
+    height: 2.2rem;
+    padding: 0 1rem;
+    border-radius: 999px;
     background-color: var(--card-bg);
-    font-size: 0.7rem;
+    font-size: 0.85rem;
 }
 
-aside *{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* table */
+
+
+main section.table{
+    padding: 0;
+    overflow: hidden;
+}
+
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.75rem;
+}
+
+
+th{
+    padding: 0.8rem 1rem;
+    background-color: var(--bg-color);
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-align: left;
+}
+
+
+td{
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
     color: var(--text-muted);
 }
 
-aside ul{
-    justify-content: space-around;
+
+tr:last-child td{
+    border-bottom: none;
 }
 
-aside a{
+
+td:last-child{
+    text-align: right;
+}
+
+
+td span{
+    color: var(--text-muted);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* cat */
+
+
+.filters{
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+
+.filters .search{
+    position: relative;
+    flex: 1;
+}
+
+
+.filters .search img{
+    position: absolute;
+    left: 0.9rem;
+    bottom: 0.8rem;
+    pointer-events: none;
+}
+
+
+.filters .search input{
+    padding-left: 2.8rem;
+}
+
+
+.filters button{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 2.9rem;
+    padding: 0 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-buttons);
+    background-color: var(--card-bg);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+
+.results{
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: 1rem;
+}
+
+
+.cards li,
+.notice-list li{
+    position: relative;
+    display: flex;
     flex-direction: column;
-    gap: 0.2rem;
-    padding: 0.25rem 0.5rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-buttons);
+    background-color: var(--card-bg);
 }
 
-aside img{
-    opacity: 0.5;
+
+.cards li:hover{
+    border-color: var(--primary);
 }
 
-aside [aria-current] img{
-    opacity: 1;
+
+.cards .code{
+    margin-bottom: 0.2rem;
+    color: var(--primary-text);
 }
 
-aside [aria-current] span{
-    color: var(--primary);
+
+.cards h3{
+    margin: 0 0 0.5rem;
+    padding-right: 3rem;
+    font-size: 1.05rem;
+    font-weight: 400;
 }
+
+
+.cards p,
+.notice-list p,
+.notice-detail p{
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+
+.credits{
+    position: absolute;
+    top: 0.9rem;
+    right: 0.9rem;
+}
+
+
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+
+.info small{
+    color: var(--text-muted);
+}
+
+
+.seats{
+    background-color: var(--success-bg);
+    color: var(--success-text);
+}
+
+
+.seats.low,
+.notice-tag.important{
+    background-color: var(--warning-bg);
+    color: var(--warning-text);
+}
+
+
+.cards h3 a::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* assginament */
+
+
+.course{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+
+.course small{
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--primary-text);
+}
+
+
+main.detail .course h2{
+    margin: 0.25rem 0;
+    font-size: 1.8rem;
+}
+
+
+.course p{
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+
+main.detail output,
+main.detail section{
+    margin-bottom: 1rem;
+}
+
+
+.checks{
+    gap: 0.5rem;
+    font-size: 0.75rem;
+}
+
+
+.checks .ok{
+    color: var(--success-text);
+}
+
+
+.checks .alert{
+    color: var(--warning-text);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* confirm */
+
+
+main.confirm > section{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+main.confirm .badge{
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 auto;
+    background-color: var(--success-bg);
+}
+
+
+main.confirm h2,
+main.confirm > section > p{
+    margin: 0;
+    text-align: center;
+}
+
+
+main.confirm > section > p{
+    font-size: 0.75rem;
+}
+
+
+main.confirm input[type="submit"]{
+    align-self: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* horario */
+
+
+main.timetable .period{
+    align-self: flex-start;
+}
+
+
+main section.schedule{
+    padding: 0.5rem;
+}
+
+
+.schedule table{
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0.5rem;
+}
+
+
+.schedule thead th:first-child{
+    width: 4rem;
+}
+
+
+.schedule th{
+    background-color: transparent;
+    font-size: 0.7rem;
+    font-weight: 400;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+
+.schedule tbody th,
+.schedule td,
+.schedule td:last-child{
+    text-align: left;
+}
+
+
+.schedule td{
+    padding: 0.6rem;
+    border: none;
+    border-radius: var(--border-radius-buttons);
+    background-color: var(--bg-color);
+}
+
+
+.schedule td small{
+    margin-bottom: 0.4rem;
+}
+
+
+.schedule td span{
+    display: block;
+}
+
+
+.schedule .lesson,
+.week .lesson{
+    background-color: var(--primary-soft);
+}
+
+
+.schedule .clash,
+.week .clash{
+    background-color: var(--warning-bg);
+}
+
+
+.week{
+    display: grid;
+    grid-template-columns: 1.2rem repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+
+.week span{
+    min-height: 4.5rem;
+    padding: 0.5rem 0.3rem;
+    border-radius: var(--border-radius-buttons);
+    background-color: var(--bg-color);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+
+.week .lesson{
+    color: var(--primary-text);
+}
+
+
+.week .clash{
+    color: var(--warning-text);
+}
+
+
+.week .label{
+    min-height: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* warnings */
+
+
+.notice-list{
+    gap: 0.75rem;
+}
+
+
+.notice-tag{
+    display: inline-block;
+    margin-bottom: 0.75rem;
+}
+
+
+.notice-list h3{
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
+}
+
+
+.notice-detail{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.notice-detail h2{
+    margin: 0;
+    font-size: 1.15rem;
+}
+
+
+.notice-detail output{
+    min-height: 2rem;
+    padding: 0.5rem;
+    background-color: var(--primary-soft);
+}
+
+
+.notice-detail output img{
+    width: 1rem;
+    height: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* desktop */
+
 
 @media (min-width: 800px) {
     nav{
@@ -414,9 +1247,11 @@ aside [aria-current] span{
         padding: 0.9rem 1.75rem;
     }
 
+
     nav > div{
         display: flex;
     }
+
 
     nav a div,
     nav .period,
@@ -425,46 +1260,71 @@ aside [aria-current] span{
         display: revert;
     }
 
+
     nav p,
     .mobile{
         display: none;
     }
 
+
     h1{
         display: block;
     }
 
+
     h2{
         text-align: left;
     }
+
 
     main{
         justify-content: flex-start;
         padding: 2rem 0 3rem;
     }
 
+
     main section{
         margin: 0;
         padding: 1.75rem;
     }
+
 
     form a,
     input[type="submit"]{
         align-self: flex-start;
     }
 
+
+    .filters .desktop{
+        display: flex;
+        flex: 0 0 15rem;
+    }
+
+
+    .course{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+
     .stats{
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
     }
+    .stats.pair{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 
     .layout{
         flex-direction: row;
     }
 
+
     .layout main{
         padding: 1.5rem 2rem;
     }
+
 
     aside{
         position: static;
@@ -479,9 +1339,11 @@ aside [aria-current] span{
         font-size: 0.9rem;
     }
 
+
     aside *{
         color: var(--sidebar-text);
     }
+
 
     aside p{
         margin: 0.25rem 0.5rem 0;
@@ -491,10 +1353,12 @@ aside [aria-current] span{
         opacity: 0.7;
     }
 
+
     aside ul{
         flex-direction: column;
         gap: 0.25rem;
     }
+
 
     aside a{
         flex-direction: row;
@@ -503,20 +1367,45 @@ aside [aria-current] span{
         border-radius: var(--border-radius-buttons);
     }
 
+
     aside a:hover{
         background-color: rgba(255, 255, 255, 0.08);
     }
 
+
     aside [aria-current]{
         background-color: rgba(255, 255, 255, 0.14);
     }
-
     aside [aria-current] span{
         color: #fff;
     }
-
     aside img{
         opacity: 0.85;
         filter: brightness(0) invert(1);
     }
-}
+    td:last-child,
+    th:last-child{
+        text-align: left;
+    }
+    main section.avg{
+        align-self: flex-end;
+        width: 40%;
+    }
+    main.notices{
+        display: grid;
+        grid-template-columns: 17rem 1fr;
+        align-items: start;
+    }
+    main.notices h1{
+        grid-column: 1 / -1;
+    }
+    main.notices .notice-detail{
+        display: flex;
+        width: 100%;
+        margin: 0;
+        padding: 1.5rem;
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius-cards);
+        background-color: var(--card-bg);
+    }
+}   

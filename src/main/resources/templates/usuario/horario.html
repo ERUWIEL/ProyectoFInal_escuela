@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Horario | Portal académico ITSON</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/inicio">
+            <span class="logo">ITSON</span>
+            <div>
+                <strong>ITSON</strong>
+                <small>Portal académico</small>
+            </div>
+        </a>
+
+        <p>Horario semanal</p>
+
+        <div>
+            <span class="period">Ago–Dic 2026</span>
+
+            <a href="/perfil">
+                <img class="avatar" src="/imgs/perfil.png" alt="">
+                <span>Luis Torres Pérez</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="layout">
+        <aside aria-label="Menú principal">
+            <p>Portal del alumno</p>
+
+            <ul>
+                <li>
+                    <a href="/inicio">
+                        <img src="/imgs/layout-dashboard.png" alt="">
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/catalogo">
+                        <img src="/imgs/book-open.png" alt="">
+                        <span>Catálogo</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/carga">
+                        <img src="/imgs/clipboard-list.png" alt="">
+                        <span>Mi carga</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/horario" aria-current="page">
+                        <img src="/imgs/calendar-days.png" alt="">
+                        <span>Horario</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/historial">
+                        <img src="/imgs/history.png" alt="">
+                        <span>Historial</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/avisos">
+                        <img src="/imgs/bell.png" alt="">
+                        <span>Avisos</span>
+                    </a>
+                </li>
+                <li class="mobile">
+                    <a href="/perfil">
+                        <img src="/imgs/perfil.png" alt="">
+                        <span>Perfil</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="timetable">
+            <h1>Horario semanal</h1>
+
+            <span class="period">Ago–Dic 2026</span>
+
+            <section class="schedule desktop">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Lun</th>
+                            <th>Mar</th>
+                            <th>Mié</th>
+                            <th>Jue</th>
+                            <th>Vie</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>08:00</th>
+                            <td>—</td>
+                            <td class="lesson">
+                                <small>Bases de Datos</small>
+                                <span>Lab. C-204</span>
+                                <span>Dr. Jorge Salas</span>
+                            </td>
+                            <td>—</td>
+                            <td class="lesson">
+                                <small>Bases de Datos</small>
+                                <span>Lab. C-204</span>
+                                <span>Dr. Jorge Salas</span>
+                            </td>
+                            <td class="lesson">
+                                <small>Matemáticas Discretas</small>
+                                <span>Aula-12</span>
+                                <span>Dr. Carlos Peña</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>10:00</th>
+                            <td class="lesson">
+                                <small>Programación Web</small>
+                                <span>Aula-25</span>
+                                <span>Mtra. Laura Méndez</span>
+                            </td>
+                            <td>—</td>
+                            <td class="lesson">
+                                <small>Programación Web</small>
+                                <span>Aula-25</span>
+                                <span>Mtra. Laura Méndez</span>
+                            </td>
+                            <td>—</td>
+                            <td class="lesson">
+                                <small>Matemáticas Discretas</small>
+                                <span>Aula-12</span>
+                                <span>Dr. Carlos Peña</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>12:00</th>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <th>14:00</th>
+                            <td class="lesson">
+                                <small>Ingeniería de Software</small>
+                                <span>Aula-23</span>
+                                <span>Mtra. Ana Ibarra</span>
+                            </td>
+                            <td>—</td>
+                            <td class="lesson">
+                                <small>Ingeniería de Software</small>
+                                <span>Aula-23</span>
+                                <span>Mtra. Ana Ibarra</span>
+                            </td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="schedule mobile">
+                <div class="week">
+                    <span class="label">Vie</span>
+                    <span class="lesson">Mat. Disc.</span>
+                    <span class="lesson">Mat. Disc.</span>
+                    <span>—</span>
+                    <span>—</span>
+
+                    <span class="label">Jue</span>
+                    <span class="lesson">B. Datos</span>
+                    <span>—</span>
+                    <span>—</span>
+                    <span>—</span>
+
+                    <span class="label">Mié</span>
+                    <span>—</span>
+                    <span class="lesson">P. Web</span>
+                    <span>—</span>
+                    <span class="lesson">Ing. Soft.</span>
+
+                    <span class="label">Mar</span>
+                    <span class="lesson">B. Datos</span>
+                    <span>—</span>
+                    <span>—</span>
+                    <span>—</span>
+
+                    <span class="label">Lun</span>
+                    <span>—</span>
+                    <span class="lesson">P. Web</span>
+                    <span>—</span>
+                    <span class="lesson">Ing. Soft.</span>
+
+                    <span class="label"></span>
+                    <span class="label">08:00</span>
+                    <span class="label">10:00</span>
+                    <span class="label">12:00</span>
+                    <span class="label">14:00</span>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

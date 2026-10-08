@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Inicio | Portal académico ITSON</title>
+    <title>Detalle de materia | Portal académico ITSON</title>
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
@@ -16,13 +16,15 @@
             </div>
         </a>
 
+        <p>Detalle de materia</p>
+
         <div>
             <span class="period">Ago–Dic 2026</span>
-           
+
             <a href="/perfil">
-    <img class="avatar" src="/imgs/perfil.png" alt="">
-    <span>Luis Torres Perez</span>
-</a>
+                <img class="avatar" src="/imgs/perfil.png" alt="">
+                <span>Luis Torres Pérez</span>
+            </a>
         </div>
     </nav>
 
@@ -32,19 +34,19 @@
 
             <ul>
                 <li>
-                    <a href="/inicio" aria-current="page">
+                    <a href="/inicio">
                         <img src="/imgs/layout-dashboard.png" alt="">
                         <span>Inicio</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/catalogo">
+                    <a href="/catalogo" aria-current="page">
                         <img src="/imgs/book-open.png" alt="">
                         <span>Catálogo</span>
                     </a>
                 </li>
                 <li class="desktop">
-                    <a href="/mi-carga">
+                    <a href="/carga">
                         <img src="/imgs/clipboard-list.png" alt="">
                         <span>Mi carga</span>
                     </a>
@@ -74,46 +76,41 @@
                     </a>
                 </li>
             </ul>
-
-        
         </aside>
 
-        <main class="wide">
+        <main class="detail">
+            <h1>Detalle de materia</h1>
+
+            <header class="course">
+                <div>
+                    <small>CS-220 · 4 créditos</small>
+                    <h2>Bases de Datos</h2>
+                    <p>Dr. Jorge Salas · Grupo 02</p>
+                </div>
+
+                <span class="seats low">2 lugares</span>
+            </header>
+
             <output class="warning">
                 <img src="/imgs/triangle-alert.png" alt="">
                 <p>
-                    <strong>Carga abierta hasta el 14 ago</strong>
-                    <span>Tienes una selección guardada sin confirmar.</span>
+                    <strong>Cupo limitado</strong>
                 </p>
             </output>
 
-            <div class="stats">
-                <section>
-                    <p>Materias inscritas</p>
-                    <strong>0</strong>
-                    <small>4 por agregar</small>
-                </section>
-
-                <section>
-                    <p>Materias previstas</p>
-                    <strong>4</strong>
-                    <small>1 pendiente</small>
-                </section>
-
-                <section class="desktop">
-                    <p>Días</p>
-                    <strong>6</strong>
-                    <small>Para el cierre</small>
-                </section>
-            </div>
-
             <section>
-                <h3>Avisos recientes</h3>
-                <ul>
-                    <li>Mantenimiento del portal · 8 ago</li>
-                    <li>Taller de carga académica · 6 ago</li>
+                <h3>Descripción y horario</h3>
+                <p>Diseño relacional, SQL, normalización y transacciones. Mar/Jue 08:00–10:00 · Lab. C-204.</p>
+
+                <ul class="checks">
+                    <li class="ok">✓ Cumples el prerrequisito</li>
+                    <li class="alert">! Coincide con Redes de Computadoras</li>
                 </ul>
             </section>
+
+            <form action="/mi-carga" method="post">
+                <input type="submit" value="Agregar a mi carga">
+            </form>
         </main>
     </div>
 </body>
