@@ -1,0 +1,95 @@
+/* ==========================================================
+   globals.css — Variables, reset y estilos base
+   ========================================================== */
+
+:root {
+  /* Colores */
+  --bg-color: #f6f8fc;
+  --card-bg: #ffffff;
+  --input-bg: #ffffff;
+  --border-color: #dfe3ea;
+
+  --text-color: #1f2937;
+  --text-muted: #4b5563;
+
+  --primary: #17375e;
+  --primary-hover: #102a49;
+  --primary-text: #1e3a5f;
+  --primary-soft: #e6eef9;
+
+  --links-color: #1e3a5f;
+  --links-color-hover: #3b6aa5;
+
+  /* Radios */
+  --border-radius-buttons: 0.5rem;
+  --border-radius-cards: 0.875rem;
+  --border-radius-logo: 0.45rem;
+  --border-radius-pill: 999px;
+
+  /* Sombras */
+  --shadow-card: 0 6px 20px rgba(23, 55, 94, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+
+  /* Tipografía */
+  --font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+
+  /* Medidas */
+  --header-height: 50px;
+  --control-height: 34px;
+}
+
+/* Celular (breakpoint: 600px) */
+@media (max-width: 600px) {
+  :root {
+    --header-height: 56px;
+    --control-height: 44px;
+    --border-radius-buttons: 0.625rem;
+  }
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background: var(--bg-color);
+}
+
+a {
+  color: var(--links-color);
+  text-decoration: none;
+  transition: all 40ms;
+}
+
+a:hover {
+  color: var(--links-color-hover);
+  transition: all 40ms;
+  cursor: pointer;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.icon {
+  display: block;
+}
