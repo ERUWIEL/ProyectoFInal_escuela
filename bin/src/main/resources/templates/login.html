@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Inicio de sesión institucional | ITSON</title>
+<link rel="stylesheet" href="/styles/globals.css">
+  <link rel="stylesheet" href="styles/style.css">
+  
+</head>
+<body class="app">
+
+  <header class="header">
+    <div class="header__brand">
+      <div class="header__logo">ITSON</div>
+      <div class="header__brand-text">
+        <strong class="header__brand-name">ITSON</strong>
+        <span class="header__brand-sub">Portal académico</span>
+      </div>
+    </div>
+
+    <span class="header__title">Inicio de sesión institucional</span>
+
+    <span class="header__period">Ago–Dic 2026</span>
+
+    <button class="header__help" type="button" aria-label="Ayuda">
+      <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="9.5"/>
+        <path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .8-1 1.5"/>
+        <circle cx="12" cy="16.8" r=".6" fill="currentColor"/>
+      </svg>
+    </button>
+  </header>
+
+  <main class="page">
+    <h1 class="page__title">Inicio de sesión institucional</h1>
+
+    <section class="login-card" aria-labelledby="login-title">
+      <h2 class="login-card__title" id="login-title">Bienvenido</h2>
+
+      <form class="form" action="#" method="post">
+        <div class="form__field">
+          <label class="form__label" for="email">Correo institucional</label>
+          <input class="form__input" id="email" name="email" type="email"
+                 value="luis.torres.perez@potros.edu.mx" autocomplete="username" required>
+        </div>
+
+        <div class="form__field form__field--password">
+          <label class="form__label" for="password">Contraseña</label>
+          <input class="form__input" id="password" name="password" type="password"
+                 value="12345678" autocomplete="current-password" required>
+          <button class="form__toggle" type="button" aria-label="Mostrar contraseña" title="Mostrar contraseña">
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </button>
+        </div>
+
+        <a class="form__link" href="#">Olvidé mi contraseña</a>
+
+        <button class="btn btn--primary" type="submit">Iniciar sesión</button>
+      </form>
+    </section>
+  </main>
+
+</body>
+</html>

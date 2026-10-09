@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Detalle de materia | Portal académico ITSON</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/inicio">
+            <span class="logo">ITSON</span>
+            <div>
+                <strong>ITSON</strong>
+                <small>Portal académico</small>
+            </div>
+        </a>
+
+        <p>Detalle de materia</p>
+
+        <div>
+            <span class="period">Ago–Dic 2026</span>
+
+            <a href="/perfil">
+                <img class="avatar" src="/imgs/perfil.png" alt="">
+                <span>Luis Torres Pérez</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="layout">
+        <aside aria-label="Menú principal">
+            <p>Portal del alumno</p>
+
+            <ul>
+                <li>
+                    <a href="/inicio">
+                        <img src="/imgs/layout-dashboard.png" alt="">
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/catalogo" aria-current="page">
+                        <img src="/imgs/book-open.png" alt="">
+                        <span>Catálogo</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/carga">
+                        <img src="/imgs/clipboard-list.png" alt="">
+                        <span>Mi carga</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/horario">
+                        <img src="/imgs/calendar-days.png" alt="">
+                        <span>Horario</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/historial">
+                        <img src="/imgs/history.png" alt="">
+                        <span>Historial</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/avisos">
+                        <img src="/imgs/bell.png" alt="">
+                        <span>Avisos</span>
+                    </a>
+                </li>
+                <li class="mobile">
+                    <a href="/perfil">
+                        <img src="/imgs/perfil.png" alt="">
+                        <span>Perfil</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="detail">
+            <h1>Detalle de materia</h1>
+
+            <header class="course">
+                <div>
+                    <small>CS-220 · 4 créditos</small>
+                    <h2>Bases de Datos</h2>
+                    <p>Dr. Jorge Salas · Grupo 02</p>
+                </div>
+
+                <span class="seats low">2 lugares</span>
+            </header>
+
+            <output class="warning">
+                <img src="/imgs/triangle-alert.png" alt="">
+                <p>
+                    <strong>Cupo limitado</strong>
+                </p>
+            </output>
+
+            <section>
+                <h3>Descripción y horario</h3>
+                <p>Diseño relacional, SQL, normalización y transacciones. Mar/Jue 08:00–10:00 · Lab. C-204.</p>
+
+                <ul class="checks">
+                    <li class="ok">✓ Cumples el prerrequisito</li>
+                    <li class="alert">! Coincide con Redes de Computadoras</li>
+                </ul>
+            </section>
+
+            <form action="/mi-carga" method="post">
+                <input type="submit" value="Agregar a mi carga">
+            </form>
+        </main>
+    </div>
+</body>
+</html>

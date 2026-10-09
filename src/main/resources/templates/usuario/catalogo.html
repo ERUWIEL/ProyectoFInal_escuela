@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Catálogo | Portal académico ITSON</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/inicio">
+            <span class="logo">ITSON</span>
+            <div>
+                <strong>ITSON</strong>
+                <small>Portal académico</small>
+            </div>
+        </a>
+
+        <p>Catálogo y selección de materias</p>
+
+        <div>
+            <span class="period">Ago–Dic 2026</span>
+
+            <a href="/perfil">
+                <img class="avatar" src="/imgs/perfil.png" alt="">
+                <span>Luis Torres Pérez</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="layout">
+        <aside aria-label="Menú principal">
+            <p>Portal del alumno</p>
+
+            <ul>
+                <li>
+                    <a href="/inicio">
+                        <img src="/imgs/layout-dashboard.png" alt="">
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/catalogo" aria-current="page">
+                        <img src="/imgs/book-open.png" alt="">
+                        <span>Catálogo</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/carga">
+                        <img src="/imgs/clipboard-list.png" alt="">
+                        <span>Mi carga</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/horario">
+                        <img src="/imgs/calendar-days.png" alt="">
+                        <span>Horario</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/historial">
+                        <img src="/imgs/history.png" alt="">
+                        <span>Historial</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/avisos">
+                        <img src="/imgs/bell.png" alt="">
+                        <span>Avisos</span>
+                    </a>
+                </li>
+                <li class="mobile">
+                    <a href="/perfil">
+                        <img src="/imgs/perfil.png" alt="">
+                        <span>Perfil</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="catalog">
+            <h1>Catálogo y selección de materias</h1>
+
+            <form class="filters" action="/catalogo" method="get">
+                <div class="search">
+                    <label for="q">Buscar materias</label>
+                    <img src="/imgs/search.png" alt="">
+                    <input type="search" id="q" name="q" placeholder="Clave, materia o docente">
+                </div>
+
+                <div class="desktop">
+                    <label for="disponibilidad">Disponibilidad</label>
+                    <select id="disponibilidad" name="disponibilidad">
+                        <option value="cupo" selected>Con cupo</option>
+                        <option value="sin-cupo">Sin cupo</option>
+                        <option value="todas">Todas</option>
+                    </select>
+                </div>
+
+                <div class="mobile">
+                    <button type="button">
+                        <img src="/imgs/sliders-horizontal.png" alt="">
+                        <span>Filtros</span>
+                    </button>
+                </div>
+            </form>
+
+            <small class="results">18 resultados para Ago–Dic 2026</small>
+
+            <ul class="cards">
+                <li>
+                    <small class="code">CS-210</small>
+                    <span class="credits">4 cr</span>
+                    <h3><a href="/materia/CS-210">Programación Web</a></h3>
+                    <p>Mtra. Laura Méndez</p>
+                    <div class="info">
+                        <small>Lun/Mié 10:00–12:00</small>
+                        <span class="seats">12 lugares</span>
+                    </div>
+                </li>
+
+                <li>
+                    <small class="code">CS-220</small>
+                    <span class="credits">4 cr</span>
+                    <h3><a href="/materia/CS-220">Bases de Datos</a></h3>
+                    <p>Dr. Jorge Salas</p>
+                    <div class="info">
+                        <small>Mar/Jue 08:00–10:00</small>
+                        <span class="seats low">2 lugares</span>
+                    </div>
+                </li>
+
+                <li>
+                    <small class="code">CS-230</small>
+                    <span class="credits">4 cr</span>
+                    <h3><a href="/materia/CS-230">Ingeniería de Software</a></h3>
+                    <p>Mtra. Ana Ibarra</p>
+                    <div class="info">
+                        <small>Lun/Mié 14:00–16:00</small>
+                        <span class="seats">8 lugares</span>
+                    </div>
+                </li>
+
+                <li>
+                    <small class="code">MA-130</small>
+                    <span class="credits">4 cr</span>
+                    <h3><a href="/materia/MA-130">Matemáticas Discretas</a></h3>
+                    <p>Dr. Carlos Peña</p>
+                    <div class="info">
+                        <small>Vie 08:00–12:00</small>
+                        <span class="seats">9 lugares</span>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="pagination">
+                <select aria-label="Página">
+                    <option selected>Página 1</option>
+                    <option>Página 2</option>
+                    <option>Página 3</option>
+                    <option>Página 4</option>
+                </select>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

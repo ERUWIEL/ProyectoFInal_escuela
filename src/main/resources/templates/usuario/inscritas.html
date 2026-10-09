@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Confirmación de inscripción | Portal académico ITSON</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/inicio">
+            <span class="logo">ITSON</span>
+            <div>
+                <strong>ITSON</strong>
+                <small>Portal académico</small>
+            </div>
+        </a>
+
+        <p>Confirmación de inscripción</p>
+
+        <div>
+            <span class="period">Ago–Dic 2026</span>
+
+            <a href="/perfil">
+                <img class="avatar" src="/imgs/perfil.png" alt="">
+                <span>Luis Torres Pérez</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="layout">
+        <aside aria-label="Menú principal">
+            <p>Portal del alumno</p>
+
+            <ul>
+                <li>
+                    <a href="/inicio" aria-current="page">
+                        <img src="/imgs/layout-dashboard.png" alt="">
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/catalogo">
+                        <img src="/imgs/book-open.png" alt="">
+                        <span>Catálogo</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/mi-carga">
+                        <img src="/imgs/clipboard-list.png" alt="">
+                        <span>Mi carga</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/horario">
+                        <img src="/imgs/calendar-days.png" alt="">
+                        <span>Horario</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/historial">
+                        <img src="/imgs/history.png" alt="">
+                        <span>Historial</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/avisos">
+                        <img src="/imgs/bell.png" alt="">
+                        <span>Avisos</span>
+                    </a>
+                </li>
+                <li class="mobile">
+                    <a href="/perfil">
+                        <img src="/imgs/perfil.png" alt="">
+                        <span>Perfil</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="confirm">
+            <h1>Confirmación de inscripción</h1>
+
+            <section>
+                <span class="badge">
+                    <img src="/imgs/ok.png" alt="">
+                </span>
+
+                <h2>¡Inscripción confirmada!</h2>
+                <p>Folio INS-2026-08142 · Ago–Dic 2026</p>
+
+                <section class="summary done">
+                    <p>Materias</p>
+                    <strong>5</strong>
+                    <small>Confirmadas</small>
+                </section>
+
+                <output>
+                    <img src="/imgs/ok.png" alt="ok">
+                    <p>
+                        <strong>Inscrito</strong>
+                    </p>
+                </output>
+
+                <form action="/materias-inscritas" method="get">
+                    <input type="submit" value="Ver materias inscritas">
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

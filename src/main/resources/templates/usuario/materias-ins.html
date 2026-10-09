@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Materias inscritas | Portal académico ITSON</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/inicio">
+            <span class="logo">ITSON</span>
+            <div>
+                <strong>ITSON</strong>
+                <small>Portal académico</small>
+            </div>
+        </a>
+
+        <p>Materias inscritas</p>
+
+        <div>
+            <span class="period">Ago–Dic 2026</span>
+
+            <a href="/perfil">
+                <img class="avatar" src="/imgs/perfil.png" alt="">
+                <span>Luis Torres Pérez</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="layout">
+        <aside aria-label="Menú principal">
+            <p>Portal del alumno</p>
+
+            <ul>
+                <li>
+                    <a href="/inicio" aria-current="page">
+                        <img src="/imgs/layout-dashboard.png" alt="">
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/catalogo">
+                        <img src="/imgs/book-open.png" alt="">
+                        <span>Catálogo</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/carga">
+                        <img src="/imgs/clipboard-list.png" alt="">
+                        <span>Mi carga</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/horario">
+                        <img src="/imgs/calendar-days.png" alt="">
+                        <span>Horario</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/historial">
+                        <img src="/imgs/history.png" alt="">
+                        <span>Historial</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/avisos">
+                        <img src="/imgs/bell.png" alt="">
+                        <span>Avisos</span>
+                    </a>
+                </li>
+                <li class="mobile">
+                    <a href="/perfil">
+                        <img src="/imgs/perfil.png" alt="">
+                        <span>Perfil</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="enrolled">
+            <h1>Materias inscritas</h1>
+
+            <output>
+                <img src="/imgs/ok.png" alt="ok">
+                <p>
+                    <strong>Carga confirmada</strong>
+                    <span>5 materias · 20 créditos · Folio INS-2026-08142</span>
+                </p>
+            </output>
+
+            <section class="table desktop">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Clave</th>
+                            <th>Materia</th>
+                            <th>Docente</th>
+                            <th>Horario</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CS-210</td>
+                            <td>Programación Web</td>
+                            <td>Mtra. Laura Méndez</td>
+                            <td>Lun/Mié 10:00–12:00</td>
+                            <td><span class="seats">Inscrita</span></td>
+                        </tr>
+                        <tr>
+                            <td>CS-220</td>
+                            <td>Bases de Datos</td>
+                            <td>Dr. Jorge Salas</td>
+                            <td>Mar/Jue 08:00–10:00</td>
+                            <td><span class="seats">Inscrita</span></td>
+                        </tr>
+                        <tr>
+                            <td>CS-230</td>
+                            <td>Ingeniería de Software</td>
+                            <td>Mtra. Ana Ibarra</td>
+                            <td>Lun/Mié 14:00–16:00</td>
+                            <td><span class="seats">Inscrita</span></td>
+                        </tr>
+                        <tr>
+                            <td>MA-130</td>
+                            <td>Matemáticas Discretas</td>
+                            <td>Dr. Carlos Peña</td>
+                            <td>Vie 08:00–12:00</td>
+                            <td><span class="seats">Inscrita</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <ul class="cards mobile">
+                <li>
+                    <small class="code">CS-210</small>
+                    <span class="credits">4 cr</span>
+                    <h3>Programación Web</h3>
+                    <p>Mtra. Laura Méndez</p>
+                    <div class="info">
+                        <small>Lun/Mié 10:00–12:00</small>
+                        <span class="seats">Inscrita</span>
+                    </div>
+                </li>
+
+                <li>
+                    <small class="code">CS-220</small>
+                    <span class="credits">4 cr</span>
+                    <h3>Bases de Datos</h3>
+                    <p>Dr. Jorge Salas</p>
+                    <div class="info">
+                        <small>Mar/Jue 08:00–10:00</small>
+                        <span class="seats">Inscrita</span>
+                    </div>
+                </li>
+
+                <li>
+                    <small class="code">CS-230</small>
+                    <span class="credits">4 cr</span>
+                    <h3>Ingeniería de Software</h3>
+                    <p>Mtra. Ana Ibarra</p>
+                    <div class="info">
+                        <small>Lun/Mié 14:00–16:00</small>
+                        <span class="seats">Inscrita</span>
+                    </div>
+                </li>
+
+                <li>
+                    <small class="code">MA-130</small>
+                    <span class="credits">4 cr</span>
+                    <h3>Matemáticas Discretas</h3>
+                    <p>Dr. Carlos Peña</p>
+                    <div class="info">
+                        <small>Vie 08:00–12:00</small>
+                        <span class="seats">Inscrita</span>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="pagination desktop">
+                <select aria-label="Página">
+                    <option selected>Página 1</option>
+                    <option>Página 2</option>
+                </select>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
