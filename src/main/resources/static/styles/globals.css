@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+:root{
+    --bg-color: #f6f8fc;
+    --card-bg: #ffffff;
+    --input-bg: #ffffff;
+    --border-color: #dfe3ea;
+    --text-color: #1f2937;
+    --text-muted: #4b5563;
+    --primary: #17375e;
+    --primary-hover: #102a49;
+    --primary-text: #1e3a5f;
+    --primary-soft: #e6eef9;
+    --success-bg: #e9f6ee;
+    --success-text: #1f7a4a;
+    --warning-bg: #fff3d6;
+    --warning-text: #a35a00;
+    --sidebar-bg: #0f2744;
+    --sidebar-text: #e6edf7;
+    --avatar-bg: #2f6f94;
+    --links-color: #1e3a5f;
+    --links-color-hover: #3b6aa5;
+    --border-radius-buttons: 0.5rem;
+    --border-radius-cards: 0.875rem;
+    --shadow-card: 0 6px 20px rgba(23, 55, 94, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+a{
+    color: var(--links-color);
+    text-decoration: none;
+    transition: all 40ms;
+}
+
+a:hover{
+    color: var(--links-color-hover);
+    transition: all 40ms;
+    cursor: pointer;
+}

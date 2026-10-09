@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mi carga | Portal académico ITSON</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/inicio">
+            <span class="logo">ITSON</span>
+            <div>
+                <strong>ITSON</strong>
+                <small>Portal académico</small>
+            </div>
+        </a>
+
+        <p>Carga en construcción y validaciones</p>
+
+        <div>
+            <span class="period">Ago–Dic 2026</span>
+
+            <a href="/perfil">
+                <img class="avatar" src="/imgs/perfil.png" alt="">
+                <span>Luis Torres Pérez</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="layout">
+        <aside aria-label="Menú principal">
+            <p>Portal del alumno</p>
+
+            <ul>
+                <li>
+                    <a href="/inicio">
+                        <img src="/imgs/layout-dashboard.png" alt="">
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/catalogo">
+                        <img src="/imgs/book-open.png" alt="">
+                        <span>Catálogo</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/carga" aria-current="page">
+                        <img src="/imgs/clipboard-list.png" alt="">
+                        <span>Mi carga</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/horario">
+                        <img src="/imgs/calendar-days.png" alt="">
+                        <span>Horario</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/historial">
+                        <img src="/imgs/history.png" alt="">
+                        <span>Historial</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/avisos">
+                        <img src="/imgs/bell.png" alt="">
+                        <span>Avisos</span>
+                    </a>
+                </li>
+                <li class="mobile">
+                    <a href="/perfil">
+                        <img src="/imgs/perfil.png" alt="">
+                        <span>Perfil</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="cart">
+            <h1>Carga en construcción y validaciones</h1>
+
+            <section class="summary">
+                <p>Materias</p>
+                <strong>5</strong>
+            </section>
+
+            <output>
+                <img src="/imgs/ok.png" alt="ok">
+                <p>
+                    <strong>Materias válidas</strong>
+                </p>
+            </output>
+
+            <section class="table">
+                <table>
+                    <thead>
+                        <tr class="desktop">
+                            <th>Clave</th>
+                            <th>Materia</th>
+                            <th>Horario</th>
+                            <th>Créditos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="desktop">CS-210</td>
+                            <td>Programación Web</td>
+                            <td class="desktop">Lun/Mié 10:00–12:00</td>
+                            <td>4<span class="mobile"> cr</span></td>
+                        </tr>
+                        <tr>
+                            <td class="desktop">CS-230</td>
+                            <td>Ingeniería de Software</td>
+                            <td class="desktop">Lun/Mié 14:00–16:00</td>
+                            <td>4<span class="mobile"> cr</span></td>
+                        </tr>
+                        <tr>
+                            <td class="desktop">MA-130</td>
+                            <td>Matemáticas Discretas</td>
+                            <td class="desktop">Vie 08:00–12:00</td>
+                            <td>4<span class="mobile"> cr</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <form action="/inscritas" method="get">
+                <input type="submit" value="Inscribirse">
+            </form>
+
+            <div class="pagination desktop">
+                <select aria-label="Página">
+                    <option selected>Página 1</option>
+                </select>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

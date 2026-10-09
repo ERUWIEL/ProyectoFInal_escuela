@@ -1,0 +1,293 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f6f8fc;
+    color: #202c3e;
+}
+
+/* Encabezado */
+
+.topbar {
+    height: 64px;
+    background: white;
+    border-bottom: 1px solid #dbe3ed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.brand-logo {
+    background: #173b69;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px 6px;
+    border-radius: 7px;
+}
+
+.brand strong {
+    font-size: 14px;
+    color: #173b69;
+}
+
+.brand small {
+    display: block;
+    font-size: 8px;
+    color: #173b69;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.period {
+    background: #edf3fc;
+    padding: 7px 13px;
+    border-radius: 20px;
+    color: #315981;
+    font-size: 12px;
+}
+
+.avatar {
+    background: #2b779b;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 10px;
+}
+
+.username {
+    font-size: 12px;
+}
+
+/* Distribución general */
+
+.layout {
+    display: flex;
+    min-height: calc(100vh - 64px);
+}
+
+/* Menú lateral */
+
+.sidebar {
+    width: 235px;
+    background: #0c223e;
+    color: white;
+    padding: 23px 12px;
+    flex-shrink: 0;
+}
+
+.sidebar-title {
+    font-size: 11px;
+    color: #9db1c7;
+    margin-bottom: 14px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.sidebar a {
+    color: #c2d2e3;
+    padding: 12px 13px;
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 7px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background: #213a59;
+    color: white;
+}
+
+/* Contenido principal */
+
+.content {
+    flex: 1;
+    padding: 30px;
+    min-width: 0;
+}
+
+h1 {
+    font-size: 23px;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+/* Alerta */
+
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff3d9;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    color: #9b5b00;
+}
+
+.alert-icon {
+    font-size: 23px;
+}
+
+.alert strong {
+    font-size: 14px;
+}
+
+.alert p {
+    color: #493c30;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Tarjetas estadísticas */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.stat-card {
+    background: white;
+    border: 1px solid #d5dfeb;
+    border-radius: 9px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.stat-card span {
+    color: #71839b;
+    font-size: 12px;
+}
+
+.stat-card strong {
+    font-size: 27px;
+    font-weight: 400;
+    color: #173e70;
+}
+
+.stat-card small {
+    font-size: 11px;
+    color: #7b8da4;
+}
+
+.stat-card strong.warning {
+    color: #b86b00;
+}
+
+/* Navegación móvil oculta en computadora */
+
+.mobile-nav {
+    display: none;
+}
+
+/* Diseño para celulares */
+
+@media (max-width: 768px) {
+
+    .topbar {
+        height: 64px;
+        padding: 0 15px;
+    }
+
+    .brand,
+    .period,
+    .avatar,
+    .username,
+    .sidebar {
+        display: none;
+    }
+
+    .topbar::before {
+        content: "Dashboard y alertas del período";
+        font-size: 14px;
+    }
+
+    .topbar::after {
+        content: "ITSON";
+        color: white;
+        background: #173b69;
+        padding: 10px 6px;
+        border-radius: 7px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .content {
+        padding: 14px;
+        padding-bottom: 90px;
+    }
+
+    h1 {
+        display: none;
+    }
+
+    .alert {
+        padding: 14px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 9px;
+    }
+
+    .stat-card {
+        padding: 14px;
+    }
+
+    .stat-card strong {
+        font-size: 24px;
+    }
+
+    .mobile-nav {
+        display: flex;
+        justify-content: space-around;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        border-top: 1px solid #dce3ed;
+        padding: 13px 5px;
+    }
+
+    .mobile-nav a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        color: #71839b;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .mobile-nav a span {
+        font-size: 10px;
+    }
+
+    .mobile-nav a.selected {
+        color: #173b69;
+    }
+}

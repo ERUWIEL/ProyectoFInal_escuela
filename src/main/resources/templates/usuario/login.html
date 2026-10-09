@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio de sesión institucional | ITSON</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/login">
+            <span class="logo">ITSON</span>
+            <div>
+                <strong>ITSON</strong>
+                <small>Portal académico</small>
+            </div>
+        </a>
+
+        <p>Inicio de sesión institucional</p>
+
+        <span class="period">Ago–Dic 2026</span>
+    </nav>
+
+    <main>
+        <h1>Inicio de sesión institucional</h1>
+
+        <section>
+            <h2>Bienvenido</h2>
+
+            <form id="loginForm">
+                <div>
+                    <label for="email">Correo institucional</label>
+                    <input type="email" id="email" name="email"
+                           value="luis.torres.perez@potros.edu.mx" autocomplete="username" required>
+                </div>
+
+                <div class="password">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password"
+                           value="12345678" autocomplete="current-password" required>
+                    <button type="button" aria-label="Mostrar contraseña">
+                        <img src="/imgs/eye_password.png" alt="">
+                    </button>
+                </div>
+
+                <a href="/recover">Olvidé mi contraseña</a>
+                <input type="submit" value="Iniciar sesión">
+                <p id="mensajeError" style="color: red;"></p>
+            </form>
+        </section>
+    </main>
+    <script>
+        document.getElementById("loginForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const correo = document.getElementById("email").value;
+                const contraseña = document.getElementById("password").value;
+
+                if (correo === "admin@itson.mx" &&
+                    contraseña === "Admin123!") {
+
+                    window.location.href = "/admin";
+
+                } else {
+                    document.getElementById("mensajeError")
+                        .textContent = "Correo o contraseña incorrectos";
+                }
+            });
+    </script>
+</body>
+</html>
