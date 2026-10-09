@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alta y edición de materia | Administración ITSON</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <nav class="admin">
+        <p>Alta y edición de materia</p>
+
+        <a href="/admin">
+            <span class="logo">ITSON</span>
+            <div>
+                <strong>ITSON</strong>
+                <small>Portal académico</small>
+            </div>
+        </a>
+
+        <div>
+            <span class="period">Ago–Dic 2026</span>
+            <a href="/perfil">
+                <img class="avatar" src="/imgs/avatar.png" alt="">
+                <span>Luis Torres</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="layout">
+        <aside aria-label="Menú de administración">
+            <p>Administración</p>
+
+            <ul>
+                <li>
+                    <a href="/admin">
+                        <img src="/imgs/layout-dashboard.png" alt="">
+                        <span>Resumen</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/materias" aria-current="page">
+                        <img src="/imgs/book-open.png" alt="">
+                        <span>Materias</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/admin/periodos">
+                        <img src="/imgs/clipboard-list.png" alt="">
+                        <span>Períodos</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/admin/personas">
+                        <img src="/imgs/calendar-days.png" alt="">
+                        <span>Personas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/inscripciones">
+                        <img src="/imgs/history.png" alt="">
+                        <span>Inscripciones</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/avisos">
+                        <img src="/imgs/bell.png" alt="">
+                        <span>Avisos</span>
+                    </a>
+                </li>
+                <li class="mobile">
+                    <a href="/perfil">
+                        <img src="/imgs/perfil.svg" alt="">
+                        <span>Perfil</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="wide">
+            <h1>Alta y edición de materia</h1>
+
+            <section>
+                <h2>Editar materia</h2>
+
+                <form action="/admin/materias" method="post">
+                    <div class="row">
+                        <div>
+                            <label for="clave">Clave</label>
+                            <input type="text" id="clave" name="clave" value="CS-210" required>
+                        </div>
+
+                        <div>
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" value="Programación Web" required>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="descripcion">Descripción</label>
+                        <input type="text" id="descripcion" name="descripcion"
+                               value="Desarrollo web moderno, accesible y conectado a servicios.">
+                    </div>
+
+                    <div class="row">
+                        <div>
+                            <label for="creditos">Créditos</label>
+                            <select id="creditos" name="creditos">
+                                <option value="2">2 créditos</option>
+                                <option value="3">3 créditos</option>
+                                <option value="4" selected>4 créditos</option>
+                                <option value="5">5 créditos</option>
+                                <option value="6">6 créditos</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="maestro">Maestro</label>
+                            <select id="maestro" name="maestro">
+                                <option value="laura-mendez" selected>Mtra. Laura Méndez</option>
+                                <option value="jorge-salas">Dr. Jorge Salas</option>
+                                <option value="ana-ibarra">Mtra. Ana Ibarra</option>
+                                <option value="carlos-pena">Dr. Carlos Peña</option>
+                                <option value="pablo-rios">Pablo Ríos</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <fieldset>
+                        <legend>Días</legend>
+                        <label><input type="checkbox" name="dias" value="lun" checked> Lun</label>
+                        <label><input type="checkbox" name="dias" value="mar"> Mar</label>
+                        <label><input type="checkbox" name="dias" value="mie" checked> Mié</label>
+                        <label><input type="checkbox" name="dias" value="jue"> Jue</label>
+                        <label><input type="checkbox" name="dias" value="vie"> Vie</label>
+                    </fieldset>
+
+                    <div class="row">
+                        <div>
+                            <label for="horario">Horario</label>
+                            <input type="text" id="horario" name="horario" value="10:00–12:00" required>
+                        </div>
+
+                        <div>
+                            <label for="cupo">Cupo máximo</label>
+                            <input type="number" id="cupo" name="cupo" value="40" min="1" required>
+                        </div>
+                    </div>
+
+                    <output>
+                        <img src="/imgs/ok.png" alt="">
+                        <p>
+                            <strong>Horario disponible</strong>
+                            <span>Sin cruces para maestra ni aula B-203.</span>
+                        </p>
+                    </output>
+
+                    <input type="submit" value="Guardar cambios">
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

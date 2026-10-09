@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avisos | Administración ITSON</title>
+    <link rel="stylesheet" th:href="@{/styles/style.css}">
+</head>
+<body>
+
+    <nav class="admin">
+        <p>Publicación y gestión de avisos</p>
+
+        <a th:href="@{/admin}">
+            <span class="logo">ITSON</span>
+            <div>
+                <strong>ITSON</strong>
+                <small>Portal académico</small>
+            </div>
+        </a>
+
+        <div>
+            <span class="period">Ago-Dic 2026</span>
+            <img class="avatar" th:src="@{/img/avatar.png}" alt="Luis Torres">
+            <span>Luis Torres</span>
+        </div>
+    </nav>
+
+    <div class="layout">
+
+        <aside>
+            <p>Administración</p>
+            <ul>
+                <li>
+                    <a th:href="@{/admin}">
+                        <img th:src="@{/img/resumen.svg}" alt="">
+                        <span>Resumen</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/admin/materias}">
+                        <img th:src="@{/img/materias.svg}" alt="">
+                        <span>Materias</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/admin/periodos}">
+                        <img th:src="@{/img/periodos.svg}" alt="">
+                        <span>Períodos</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/admin/personas}">
+                        <img th:src="@{/img/personas.svg}" alt="">
+                        <span>Personas</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/admin/inscripciones}">
+                        <img th:src="@{/img/inscripciones.svg}" alt="">
+                        <span>Inscripciones</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/admin/avisos}" aria-current="page">
+                        <img th:src="@{/img/avisos.svg}" alt="">
+                        <span>Avisos</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="admin">
+            <h1>Publicación y gestión de avisos</h1>
+
+            <div class="filters">
+                <div class="tabs">
+                    <span class="period">Todos</span>
+                    <small>Publicados · 12</small>
+                </div>
+                <a class="new" href="#nuevo-aviso">
+                    <img th:src="@{/img/mas.svg}" alt="">
+                    Nuevo aviso
+                </a>
+            </div>
+
+            <!-- Escritorio: tabla -->
+            <section class="table desktop">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Audiencia</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AV-142</td>
+                            <td>Mantenimiento programado</td>
+                            <td>Toda la comunidad</td>
+                            <td><span >Publicado</span></td>
+                        </tr>
+                        <tr>
+                            <td>AV-139</td>
+                            <td>Taller de carga académica</td>
+                            <td>Alumnos</td>
+                            <td><span>Publicado</span></td>
+                        </tr>
+                        <tr>
+                            <td>AV-151</td>
+                            <td>Cierre de carga en 48 h</td>
+                            <td>Alumnos</td>
+                            <td><span >Programado</span></td>
+                        </tr>
+                        <tr>
+                            <td>AV-153</td>
+                            <td>Junta de academia</td>
+                            <td>Maestros</td>
+                            <td><span>Borrador</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Celular: tarjetas -->
+            <ul class="cards mobile">
+                <li>
+                    <span class="credits">Publicado</span>
+                    <h3>Mantenimiento programado</h3>
+                    <p class="code">AV-142</p>
+                    <p>Toda la comunidad</p>
+                </li>
+                <li>
+                    <span class="credits">Publicado</span>
+                    <h3>Taller de carga académica</h3>
+                    <p class="code">AV-139</p>
+                    <p>Alumnos</p>
+                </li>
+                <li>
+                    <span class="credits low">Programado</span>
+                    <h3>Cierre de carga en 48 h</h3>
+                    <p class="code">AV-151</p>
+                    <p>Alumnos</p>
+                </li>
+                <li>
+                    <span class="credits full">Borrador</span>
+                    <h3>Junta de academia</h3>
+                    <p class="code">AV-153</p>
+                    <p>Maestros</p>
+                </li>
+            </ul>
+
+            <!-- Pop up: nuevo aviso (se abre con :target) -->
+            <div class="popup" id="nuevo-aviso">
+                <a href="#" aria-label="Cerrar"></a>
+
+                <section>
+                    <header>
+                        <h2>Nuevo aviso</h2>
+                        <a class="close" href="#" aria-label="Cerrar">&times;</a>
+                    </header>
+
+                    <form th:action="@{/admin/avisos}" method="post">
+                        <div>
+                            <label for="titulo">Título</label>
+                            <input type="text" id="titulo" name="titulo" placeholder="Cierre de carga en 48 horas" required>
+                        </div>
+
+                        <div class="row">
+                            <div>
+                                <label for="audiencia">Audiencia</label>
+                                <select id="audiencia" name="audiencia">
+                                    <option value="alumnos">Alumnos</option>
+                                    <option value="maestros">Maestros</option>
+                                    <option value="todos">Toda la comunidad</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="publicacion">Publicación</label>
+                                <select id="publicacion" name="publicacion">
+                                    <option value="12-ago-0900">12 ago · 09:00</option>
+                                    <option value="13-ago-0900">13 ago · 09:00</option>
+                                    <option value="14-ago-0900">14 ago · 09:00</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="indole">Índole</label>
+                            <select id="indole" name="indole">
+                                <option value="">Seleccionar índole</option>
+                                <option value="academico">Académico</option>
+                                <option value="administrativo">Administrativo</option>
+                            </select>
+                        </div>
+
+                        <fieldset aria-label="Etiquetas">
+                            <label><input type="checkbox" name="etiquetas" value="academico"> Académico</label>
+                            <label><input type="checkbox" name="etiquetas" value="importante"> Importante</label>
+                            <label><input type="checkbox" name="etiquetas" value="personal"> Personal</label>
+                        </fieldset>
+
+                        <input type="submit" value="Programar publicación">
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

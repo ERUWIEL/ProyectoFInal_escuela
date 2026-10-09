@@ -23,6 +23,8 @@
     --border-radius-buttons: 0.5rem;
     --border-radius-cards: 0.875rem;
     --shadow-card: 0 6px 20px rgba(23, 55, 94, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+    --danger-bg: #fde8e8;
+--danger-text: #b42318;
 }
 
 a{

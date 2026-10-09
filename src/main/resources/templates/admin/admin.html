@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | Administración ITSON</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <nav class="admin">
+        <p>Dashboard y alertas del período</p>
+
+        <a href="/admin">
+            <span class="logo">ITSON</span>
+            <div>
+                <strong>ITSON</strong>
+                <small>Portal académico</small>
+            </div>
+        </a>
+
+        <div>
+            <span class="period">Ago–Dic 2026</span>
+            <a href="/perfil">
+                <img class="avatar" src="/imgs/avatar.png" alt="">
+                <span>Luis Torres</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="layout">
+        <aside aria-label="Menú de administración">
+            <p>Administración</p>
+
+            <ul>
+                <li>
+                    <a href="/admin" aria-current="page">
+                        <img src="/imgs/layout-dashboard.png" alt="">
+                        <span>Resumen</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/materias">
+                        <img src="/imgs/book-open.png" alt="">
+                        <span>Materias</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/admin/periodos">
+                        <img src="/imgs/clipboard-list.png" alt="">
+                        <span>Períodos</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/admin/personas">
+                        <img src="/imgs/calendar-days.png" alt="">
+                        <span>Personas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/inscripciones">
+                        <img src="/imgs/history.png" alt="">
+                        <span>Inscripciones</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/avisos">
+                        <img src="/imgs/bell.png" alt="">
+                        <span>Avisos</span>
+                    </a>
+                </li>
+                <li class="mobile">
+                    <a href="/perfil">
+                        <img src="/imgs/perfil.svg" alt="">
+                        <span>Perfil</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="wide">
+            <h1>Dashboard y alertas del período</h1>
+
+            <output class="warning">
+                <img src="/imgs/warning.svg" alt="">
+                <p>
+                    <strong>2 alertas por atender</strong>
+                    <span>Programación Web al 95% y 14 alumnos sin confirmar.</span>
+                </p>
+            </output>
+
+            <div class="stats quad">
+                <section>
+                    <p>Inscripciones</p>
+                    <strong>1,284</strong>
+                    <small>+86 hoy</small>
+                </section>
+
+                <section>
+                    <p>Alumnos</p>
+                    <strong>742</strong>
+                    <small>83% confirmó</small>
+                </section>
+
+                <section>
+                    <p>Materias</p>
+                    <strong>61/68</strong>
+                    <small>7 borradores</small>
+                </section>
+
+                <section>
+                    <p>Cupo crítico</p>
+                    <strong>6</strong>
+                    <small>Menos de 3 lugares</small>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

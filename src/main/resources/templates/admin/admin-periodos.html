@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Períodos escolares | Administración ITSON</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <nav class="admin">
+        <p>Períodos escolares</p>
+
+        <a href="/admin">
+            <span class="logo">ITSON</span>
+            <div>
+                <strong>ITSON</strong>
+                <small>Portal académico</small>
+            </div>
+        </a>
+
+        <div>
+            <span class="period">Ago–Dic 2026</span>
+            <a href="/perfil">
+                <img class="avatar" src="/imgs/avatar.png" alt="">
+                <span>Luis Torres</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="layout">
+        <aside aria-label="Menú de administración">
+            <p>Administración</p>
+
+            <ul>
+                <li>
+                    <a href="/admin">
+                        <img src="/imgs/layout-dashboard.png" alt="">
+                        <span>Resumen</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/materias">
+                        <img src="/imgs/book-open.png" alt="">
+                        <span>Materias</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/admin/periodos" aria-current="page">
+                        <img src="/imgs/clipboard-list.png" alt="">
+                        <span>Períodos</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/admin/personas">
+                        <img src="/imgs/calendar-days.png" alt="">
+                        <span>Personas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/inscripciones">
+                        <img src="/imgs/history.png" alt="">
+                        <span>Inscripciones</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/avisos">
+                        <img src="/imgs/bell.png" alt="">
+                        <span>Avisos</span>
+                    </a>
+                </li>
+                <li class="mobile">
+                    <a href="/perfil">
+                        <img src="/imgs/perfil.svg" alt="">
+                        <span>Perfil</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="wide">
+            <h1>Períodos escolares</h1>
+
+            <output>
+                <img src="/imgs/ok.png" alt="">
+                <p>
+                    <strong>Proceso abierto</strong>
+                    <span>Ago–Dic 2026 recibe inscripciones hasta el 14 de agosto.</span>
+                </p>
+            </output>
+
+            <form action="/admin/periodos/nuevo" method="get">
+                <input type="submit" value="+ Nuevo período">
+            </form>
+
+            <section class="table desktop">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Período</th>
+                            <th>Clases</th>
+                            <th>Carga</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#periodo-ago-dic-2026">Ago–Dic 2026</a></td>
+                            <td>05 ago–12 dic</td>
+                            <td>05–14 ago</td>
+                            <td><span class="seats">Carga abierta</span></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#periodo-ene-jun-2026">Ene–Jun 2026</a></td>
+                            <td>12 ene–20 jun</td>
+                            <td>08–16 ene</td>
+                            <td><span class="seats">Cerrado</span></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#periodo-ago-dic-2025">Ago–Dic 2025</a></td>
+                            <td>04 ago–13 dic</td>
+                            <td>04–13 ago</td>
+                            <td><span class="seats">Cerrado</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <ul class="cards mobile">
+                <li>
+                    <h3><a href="#periodo-ago-dic-2026">05 ago–12 dic</a></h3>
+                    <span class="credits seats">Carga abierta</span>
+                    <small class="code">Ago–Dic 2026</small>
+                    <small>05–14 ago</small>
+                </li>
+                <li>
+                    <h3><a href="#periodo-ene-jun-2026">12 ene–20 jun</a></h3>
+                    <span class="credits seats">Cerrado</span>
+                    <small class="code">Ene–Jun 2026</small>
+                    <small>08–16 ene</small>
+                </li>
+                <li>
+                    <h3><a href="#periodo-ago-dic-2025">04 ago–13 dic</a></h3>
+                    <span class="credits seats">Cerrado</span>
+                    <small class="code">Ago–Dic 2025</small>
+                    <small>04–13 ago</small>
+                </li>
+            </ul>
+
+            <div class="popup" id="periodo-ago-dic-2026">
+                <a href="#" aria-label="Cerrar ventana"></a>
+                <section>
+                    <span class="badge warning">
+                        <img src="/imgs/lock.svg" alt="">
+                    </span>
+
+                    <h2>Cerrar proceso de carga</h2>
+
+                    <form action="/admin/periodos/ago-dic-2026/cerrar" method="post">
+                        <fieldset>
+                            <label><input type="checkbox" name="confirma" required> Confirma</label>
+                        </fieldset>
+
+                        <input class="danger" type="submit" value="Cerrar proceso">
+                    </form>
+                </section>
+            </div>
+
+            <div class="popup" id="periodo-ene-jun-2026">
+                <a href="#" aria-label="Cerrar ventana"></a>
+                <section>
+                    <span class="badge">
+                        <img src="/imgs/lock.svg" alt="">
+                    </span>
+
+                    <h2>Abrir proceso de carga</h2>
+
+                    <form action="/admin/periodos/ene-jun-2026/abrir" method="post">
+                        <fieldset>
+                            <label><input type="checkbox" name="confirma" required> Confirma</label>
+                        </fieldset>
+
+                        <input type="submit" value="Abrir proceso">
+                    </form>
+                </section>
+            </div>
+
+            <div class="popup" id="periodo-ago-dic-2025">
+                <a href="#" aria-label="Cerrar ventana"></a>
+                <section>
+                    <span class="badge">
+                        <img src="/imgs/lock.svg" alt="">
+                    </span>
+
+                    <h2>Abrir proceso de carga</h2>
+
+                    <form action="/admin/periodos/ago-dic-2025/abrir" method="post">
+                        <fieldset>
+                            <label><input type="checkbox" name="confirma" required> Confirma</label>
+                        </fieldset>
+
+                        <input type="submit" value="Abrir proceso">
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

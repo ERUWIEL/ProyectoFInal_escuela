@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gestión de alumnos y maestros | Administración ITSON</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <nav class="admin">
+        <p>Gestión de alumnos y maestros</p>
+
+        <a href="/admin">
+            <span class="logo">ITSON</span>
+            <div>
+                <strong>ITSON</strong>
+                <small>Portal académico</small>
+            </div>
+        </a>
+
+        <div>
+            <span class="period">Ago–Dic 2026</span>
+            <a href="/perfil">
+                <img class="avatar" src="/imgs/avatar.png" alt="">
+                <span>Luis Torres</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="layout">
+        <aside aria-label="Menú de administración">
+            <p>Administración</p>
+
+            <ul>
+                <li>
+                    <a href="/admin">
+                        <img src="/imgs/layout-dashboard.png" alt="">
+                        <span>Resumen</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/materias">
+                        <img src="/imgs/book-open.png" alt="">
+                        <span>Materias</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/admin/periodos">
+                        <img src="/imgs/clipboard-list.png" alt="">
+                        <span>Períodos</span>
+                    </a>
+                </li>
+                <li class="desktop">
+                    <a href="/admin/personas" aria-current="page">
+                        <img src="/imgs/calendar-days.png" alt="">
+                        <span>Personas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/inscripciones">
+                        <img src="/imgs/history.png" alt="">
+                        <span>Inscripciones</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/avisos">
+                        <img src="/imgs/bell.png" alt="">
+                        <span>Avisos</span>
+                    </a>
+                </li>
+                <li class="mobile">
+                    <a href="/perfil">
+                        <img src="/imgs/perfil.svg" alt="">
+                        <span>Perfil</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="wide">
+            <h1>Gestión de alumnos y maestros</h1>
+
+            <form class="filters" action="/admin/personas" method="get">
+                <div class="tabs">
+                    <a class="period" href="/admin/personas?tipo=alumnos" aria-current="page">Alumnos · 842</a>
+                    <a href="/admin/personas?tipo=maestros">Maestros · 96</a>
+                </div>
+
+                <div class="search">
+                    <label for="buscar">Buscar</label>
+                    <input type="search" id="buscar" name="buscar" placeholder="Matrícula, empleado o correo">
+                    <img src="/imgs/search.png" alt="">
+                </div>
+
+                <input class="desktop" type="submit" form="registrar" value="Registrar">
+            </form>
+
+            <section class="table desktop">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Matrícula/empleado</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A0231845</td>
+                            <td>Luis Torres Perez</td>
+                            <td>luis.torres.perez@potros.edu.mx</td>
+                            <td>Alumno</td>
+                        </tr>
+                        <tr>
+                            <td>A0231421</td>
+                            <td>Diego Herrera</td>
+                            <td>diego.herrera@potros.edu.mx</td>
+                            <td>Alumno</td>
+                        </tr>
+                        <tr>
+                            <td>EMP-1048</td>
+                            <td>Laura Méndez</td>
+                            <td>laura.mendez@potros.edu.mx</td>
+                            <td>Maestro</td>
+                        </tr>
+                        <tr>
+                            <td>EMP-0872</td>
+                            <td>Jorge Salas</td>
+                            <td>jorge.salas@potros.edu.mx</td>
+                            <td>Maestro</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <ul class="cards mobile">
+                <li>
+                    <h3>Luis Torres Perez</h3>
+                    <span class="credits">Alumno</span>
+                    <small class="code">A0231845</small>
+                    <small>luis.torres.perez@potros.edu.mx</small>
+                </li>
+                <li>
+                    <h3>Diego Herrera</h3>
+                    <span class="credits">Alumno</span>
+                    <small class="code">A0231421</small>
+                    <small>diego.herrera@potros.edu.mx</small>
+                </li>
+                <li>
+                    <h3>Laura Méndez</h3>
+                    <span class="credits">Maestro</span>
+                    <small class="code">EMP-1048</small>
+                    <small>laura.mendez@potros.edu.mx</small>
+                </li>
+                <li>
+                    <h3>Jorge Salas</h3>
+                    <span class="credits">Maestro</span>
+                    <small class="code">EMP-0872</small>
+                    <small>jorge.salas@potros.edu.mx</small>
+                </li>
+            </ul>
+
+            <input class="mobile" type="submit" form="registrar" value="Registrar">
+        </main>
+    </div>
+
+    <form id="registrar" action="/admin/personas/nueva" method="get"></form>
+</body>
+</html>

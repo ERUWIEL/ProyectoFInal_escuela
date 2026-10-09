@@ -105,6 +105,14 @@
    .notice-detail muestra el detalle del aviso */
 
 
+/* admin avisos:
+   main.admin es la pagina de avisos del administrador
+   .new es el boton que abre el pop up
+   .popup es la ventana de nuevo aviso
+   .close cierra el pop up
+   form .row pone dos campos en una fila */
+
+
 /* escritorio:
    Reglas para pantallas desde 800px
    El menu cambia de abajo a lado
@@ -188,17 +196,7 @@ select{
 }
 
 
-a{
-    color: var(--links-color);
-    text-decoration: none;
-    transition: all 40ms;
-}
 
-
-a:hover{
-    color: var(--links-color-hover);
-    cursor: pointer;
-}
 
 
 /* visibilidad */
@@ -212,6 +210,14 @@ aside p,
     display: none;
 }
 
+
+nav.admin{
+    grid-template-columns: 1fr 2.6rem;
+}
+
+nav.admin p{
+    text-align: left;
+}
 
 
 
@@ -461,7 +467,30 @@ aside [aria-current] span{
 
 
 
+fieldset{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
 
+legend{
+    margin-bottom: 0.3rem;
+    padding: 0;
+    font-size: 0.9rem;
+}
+
+fieldset label{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+input[type="checkbox"]{
+    accent-color: var(--primary);
+}
 
 
 form{
@@ -483,8 +512,8 @@ label{
 }
 
 
-form input:not([type="submit"]),
-form select{
+form input:not([type="submit"]):not([type="checkbox"]),
+form select{    
     height: 2.9rem;
     padding: 0 1rem;
     border: 1px solid var(--border-color);
@@ -774,10 +803,12 @@ td span{
 
 
 .filters{
+    display: flex;
     flex-direction: row;
     align-items: flex-end;
     gap: 0.75rem;
     margin-bottom: 0.75rem;
+    flex-wrap: wrap;
 }
 
 
@@ -812,7 +843,18 @@ td span{
     font-size: 0.9rem;
     cursor: pointer;
 }
+.filters .tabs{
+    display: flex;
+    flex: 1 0 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    order: 1;
+}
 
+main[class] .filters input[type="submit"]{
+    align-self: flex-end;
+}
 
 .results{
     margin-bottom: 1rem;
@@ -895,11 +937,16 @@ td span{
 
 
 .seats.low,
+.credits.low,
 .notice-tag.important{
     background-color: var(--warning-bg);
     color: var(--warning-text);
 }
-
+.seats.full,
+.credits.full{
+    background-color: var(--danger-bg);
+    color: var(--danger-text);
+}
 
 .cards h3 a::after{
     content: "";
@@ -1237,10 +1284,127 @@ main section.schedule{
 
 
 
-/* desktop */
+/* admin */
 
+
+main.admin .filters{
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+main.admin .filters .tabs{
+    flex: none;
+    order: 0;
+}
+
+
+.filters .tabs small{
+    color: var(--text-muted);
+}
+
+
+.new{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 2.9rem;
+    padding: 0 1.25rem;
+    border-radius: var(--border-radius-buttons);
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 0.9rem;
+    transition: all 0.5s;
+}
+
+
+.new:hover{
+    background-color: var(--primary-hover);
+    color: #fff;
+}
+
+
+.new img{
+    filter: brightness(0) invert(1);
+}
+
+
+form .row{
+    flex-direction: row;
+    gap: 0.75rem;
+}
+
+
+form .row div{
+    flex: 1;
+    min-width: 0;
+}
+
+
+.popup header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+
+.popup header h2{
+    margin: 0;
+    font-size: 1.15rem;
+}
+
+
+.popup .close{
+    display: grid;
+    place-items: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-buttons);
+    font-size: 1.2rem;
+}
+
+
+.popup fieldset{
+    flex-direction: column;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-buttons);
+}
+
+
+/* desktop */
+.popup{
+    position: fixed;
+    inset: 0;
+    display: none;
+    place-items: center;
+    background-color: rgba(15, 39, 68, 0.45);
+}
+
+.popup:target{
+    display: grid;
+}
+
+.popup > a{
+    position: absolute;
+    inset: 0;
+}
+
+main .popup section{
+    position: relative;
+    width: min(90vw, 24rem);
+}
+
+input[type="submit"].danger{
+    background-color: var(--danger-text);
+}
 
 @media (min-width: 800px) {
+    
     nav{
         display: flex;
         justify-content: space-between;
@@ -1251,7 +1415,13 @@ main section.schedule{
     nav > div{
         display: flex;
     }
+nav.admin{
+    grid-template-columns: 1fr 2.6rem;
+}
 
+nav.admin p{
+    text-align: left;
+}
 
     nav a div,
     nav .period,
@@ -1295,7 +1465,7 @@ main section.schedule{
     }
 
 
-    .filters .desktop{
+    .filters div .desktop{
         display: flex;
         flex: 0 0 15rem;
     }
@@ -1305,7 +1475,11 @@ main section.schedule{
         flex-direction: row;
         justify-content: space-between;
     }
-
+.filters .tabs{
+    flex: none;
+    align-self: flex-start;
+    order: -1;
+}
 
     .stats{
         grid-template-columns: repeat(3, 1fr);
@@ -1314,6 +1488,9 @@ main section.schedule{
     .stats.pair{
         grid-template-columns: repeat(2, 1fr);
     }
+    .stats.quad{
+    grid-template-columns: repeat(4, 1fr);
+}
 
 
     .layout{
@@ -1408,4 +1585,4 @@ main section.schedule{
         border-radius: var(--border-radius-cards);
         background-color: var(--card-bg);
     }
-}   
+}

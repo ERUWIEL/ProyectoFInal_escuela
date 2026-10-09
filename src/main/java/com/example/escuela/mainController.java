@@ -60,4 +60,29 @@ public String periodo() {
 public String avisos() {
     return "usuario/avisos";
 }
+@GetMapping({"/admin", "/admin.html"})
+public String admin() {
+    return "admin/admin";
+}
+@GetMapping({"/admin/materias", "/admin/materias.html"})
+public String adminMaterias() {
+    return "admin/admin-materias";
+}
+@GetMapping({"/admin/materias/nueva", "/admin/materias/nueva.html"})
+public String adminMateria() {
+    return "admin/admin-materia";
+}
+@GetMapping({"/admin/periodos", "/admin/periodos.html"})
+public String adminPeriodos() {
+    return "admin/admin-periodos";
+}
+@GetMapping({"/admin/personas", "/admin/personas.html"})
+public String adminPersonas() {
+    return "admin/admin-personas";
+}
+@GetMapping({"/admin/avisos", "/admin/avisos.html"})
+public String adminAvisos() {
+    return "admin/admin-avisos";
+}
+
 }
